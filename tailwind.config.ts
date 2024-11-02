@@ -1,16 +1,11 @@
 /** @type {import('tailwindcss').Config} */
+import type { Config } from "tailwindcss"
 
-/*
-NOTE: 
-> the BEST way to do the transformation is use a hsl function defined in the @lib/hsl. pass it the var() vals and thats it.
-*/
 export default {
     darkMode: ["class"],
 
-    // these files are scanned by postCSS.
     content: ["./src/routes/**/*.tsx", "./src/global.css"],
 
-    // i need to know what the fuck is this.
     theme: {
         extend: {
             borderRadius: {
@@ -18,11 +13,9 @@ export default {
                 md: "calc(var(--radius) - 2px)",
                 sm: "calc(var(--radius) - 4px)",
             },
-            // why the fuck we are not directly using var here and hsl there. ANS: opacity modifier syntax wont work and would eventually break the shadcn ui.
 
             colors: {
-                // this ain't going to work btw. postcss preprocess this string before putting it in the output.css. for this to work, var(--background) should be resolved first and then, hsla should be called.
-                background: "var(--background)",
+                background: "rgb(var(--background))",
                 foreground: "hsl(var(--foreground))",
                 card: {
                     DEFAULT: "hsl(var(--card))",
@@ -65,10 +58,9 @@ export default {
             },
         },
     },
-    // plus this as well.
-    /* 
-	NOTE:
-	> we can't simply define a custom plugin here because then we would have to apply the transformation on each CSS variable.
-	*/
+
     plugins: [require("tailwindcss-animate")],
-};
+} satisfies Config
+
+
+

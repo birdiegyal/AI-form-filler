@@ -2,27 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 
-NOTE:
-> we are going to use hex values, because they are very easily available in figma and coolors. all i got to do is copy and paste one time. but then we can't use the opacity-modifier syntax in tailwindcss. but thats not our problem because the colors in figma comes predefined with all the opacity required. so we dont need it anyways. 
-
-we need to look how shadcn works with customized HEX values.
-*/
-
-/* 
-SCOPE: 
-> our plugin should work on :root and .dark class only. it ain't got to be generic btw. rn its all about solving our problem first. later on, if we got motion, we can always create another project to maintain side by side. also i dont want to make this a monorepo cause i dont know the way. **SKILL ISSUE**.
-*/
-
-/* 
-SOLN:
-> postcss-color-hexa may helps us. but the problem is we still have to edit some of it.
-> postcss-rgb-plz is looking very promising.
-
-*/
 @layer base {
     :root {
-        --background: hsl(57, 100%, 49%);
+        --background: #FBFBF2;
         --foreground: 0 0% 3.9%;
         --card: 0 0% 100%;
         --card-foreground: 0 0% 3.9%;
@@ -86,9 +68,8 @@ SOLN:
     }
 }
 
-/* always put custom classes in utilities layer. they are gonna override the base layer styles. this also makes sense because you wont be writing all of the from scratch by yourself. you will just be wanting to tweak some colors, fonts, probably some radius and sizes.*/
 @layer utilities {
     body {
-        @apply bg-background/50;
+        @apply bg-background/90;
     }
 }
