@@ -4,7 +4,10 @@ import type { Config } from "tailwindcss"
 export default {
     darkMode: ["class"],
 
-    content: ["./src/routes/**/*.tsx", "./src/global.css"],
+    content: [
+        "./src/routes/**/*.tsx",
+        "./src/components/**/*.tsx"
+    ],
 
     theme: {
         extend: {
@@ -15,7 +18,7 @@ export default {
             },
 
             colors: {
-                background: "rgb(var(--background))",
+                background: "hsl(var(--background))",
                 foreground: "hsl(var(--foreground))",
                 card: {
                     DEFAULT: "hsl(var(--card))",
@@ -56,11 +59,13 @@ export default {
                     5: "hsl(var(--chart-5))",
                 },
             },
+
+            fontFamily: {
+                sans: ["Inter", "sans-serif"],
+                display: ["Leckerli One", "cursive"],
+            },
         },
     },
 
     plugins: [require("tailwindcss-animate")],
 } satisfies Config
-
-
-

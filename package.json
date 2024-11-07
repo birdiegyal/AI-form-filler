@@ -11,6 +11,7 @@
     "start": "vite"
   },
   "devDependencies": {
+    "@hookform/devtools": "^4.3.1",
     "@tanstack/router-plugin": "^1.77.7",
     "@types/node": "^22.8.4",
     "@types/react": "^18.3.3",

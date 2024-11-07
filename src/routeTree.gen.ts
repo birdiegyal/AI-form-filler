@@ -11,14 +11,35 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as AboutImport } from './routes/about'
+import { Route as UploadfilesImport } from './routes/uploadfiles'
+import { Route as SignupImport } from './routes/signup'
+import { Route as SettingsImport } from './routes/settings'
+import { Route as FillformsImport } from './routes/fillforms'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
 
-const AboutRoute = AboutImport.update({
-  id: '/about',
-  path: '/about',
+const UploadfilesRoute = UploadfilesImport.update({
+  id: '/uploadfiles',
+  path: '/uploadfiles',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const SignupRoute = SignupImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const SettingsRoute = SettingsImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const FillformsRoute = FillformsImport.update({
+  id: '/fillforms',
+  path: '/fillforms',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -39,11 +60,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutImport
+    '/fillforms': {
+      id: '/fillforms'
+      path: '/fillforms'
+      fullPath: '/fillforms'
+      preLoaderRoute: typeof FillformsImport
+      parentRoute: typeof rootRoute
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsImport
+      parentRoute: typeof rootRoute
+    }
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupImport
+      parentRoute: typeof rootRoute
+    }
+    '/uploadfiles': {
+      id: '/uploadfiles'
+      path: '/uploadfiles'
+      fullPath: '/uploadfiles'
+      preLoaderRoute: typeof UploadfilesImport
       parentRoute: typeof rootRoute
     }
   }
@@ -53,37 +95,52 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/fillforms': typeof FillformsRoute
+  '/settings': typeof SettingsRoute
+  '/signup': typeof SignupRoute
+  '/uploadfiles': typeof UploadfilesRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/fillforms': typeof FillformsRoute
+  '/settings': typeof SettingsRoute
+  '/signup': typeof SignupRoute
+  '/uploadfiles': typeof UploadfilesRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/fillforms': typeof FillformsRoute
+  '/settings': typeof SettingsRoute
+  '/signup': typeof SignupRoute
+  '/uploadfiles': typeof UploadfilesRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about'
+  fullPaths: '/' | '/fillforms' | '/settings' | '/signup' | '/uploadfiles'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about'
-  id: '__root__' | '/' | '/about'
+  to: '/' | '/fillforms' | '/settings' | '/signup' | '/uploadfiles'
+  id: '__root__' | '/' | '/fillforms' | '/settings' | '/signup' | '/uploadfiles'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
+  FillformsRoute: typeof FillformsRoute
+  SettingsRoute: typeof SettingsRoute
+  SignupRoute: typeof SignupRoute
+  UploadfilesRoute: typeof UploadfilesRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
+  FillformsRoute: FillformsRoute,
+  SettingsRoute: SettingsRoute,
+  SignupRoute: SignupRoute,
+  UploadfilesRoute: UploadfilesRoute,
 }
 
 export const routeTree = rootRoute
@@ -99,14 +156,26 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/about"
+        "/fillforms",
+        "/settings",
+        "/signup",
+        "/uploadfiles"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
-    "/about": {
-      "filePath": "about.tsx"
+    "/fillforms": {
+      "filePath": "fillforms.tsx"
+    },
+    "/settings": {
+      "filePath": "settings.tsx"
+    },
+    "/signup": {
+      "filePath": "signup.tsx"
+    },
+    "/uploadfiles": {
+      "filePath": "uploadfiles.tsx"
     }
   }
 }

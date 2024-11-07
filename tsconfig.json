@@ -1,14 +1,16 @@
 {
     "compilerOptions": {
-        "strict": true,
-        "esModuleInterop": true,
-        "jsx": "react-jsx",
-        "target": "ESNext",
-        "module": "ESNext",
-        "moduleResolution": "Bundler",
-        "baseUrl": ".",
-        "paths": {
-            "@/*": ["./src/*"]
-        }
+      "strict": true,
+      "esModuleInterop": true,
+      "jsx": "react-jsx",
+      "target": "ESNext",
+      "module": "ESNext",
+      "moduleResolution": "Bundler",
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["./src/*"],
+        ">/*": ["./assets/*"]
+      },
+      "types": ["vite/client"]
     },
 }

@@ -7,6 +7,8 @@ import { routeTree } from '@/routeTree.gen'
 const router = createRouter({
   routeTree,
   defaultPreload: 'intent',
+  defaultViewTransition: true,
+  
 })
 
 // Register things for typesafety
