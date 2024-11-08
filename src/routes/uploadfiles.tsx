@@ -9,7 +9,7 @@ export const Route = createFileRoute("/uploadfiles")({
 
 function UploadFiles() {
   return (
-    <div className="relative flex flex-col gap-5 p-4 sm:mt-10 sm:w-2/3 lg:w-1/2 sm:p-0">
+    <div className="relative flex flex-col gap-5">
       <h1 className="font-display text-4xl">Upload Files</h1>
       <img
         src={FileUploadArrow}

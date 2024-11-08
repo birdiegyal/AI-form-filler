@@ -7,8 +7,8 @@ export const Route = createFileRoute("/settings")({
 
 function Settings() {
   return (
-    <div className="flex flex-col gap-7 p-4 justify-center items-center sm:p-0 w-full">
-      <div className="flex flex-col gap-5 sm:w-2/3 lg:w-1/2 sm:mt-10">
+    <div className="flex flex-col gap-7 justify-center items-center">
+      <div className="flex flex-col gap-5 ">
         <h1 className="font-display text-4xl capitalize ">
           custom instructions
         </h1>

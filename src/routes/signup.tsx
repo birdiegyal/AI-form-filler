@@ -11,7 +11,7 @@ export const Route = createFileRoute("/signup")({
 
 function Signup() {
   return (
-    <div className="flex flex-col place-content-center gap-5 p-4 sm:mt-10 sm:w-2/3 sm:p-0 lg:w-1/2">
+    <div className="flex flex-col place-content-center gap-5">
       <div className="relative min-h-80">
         <img
           src={tryIcon}
@@ -29,7 +29,7 @@ function Signup() {
           className="absolute left-1/2 -translate-x-1/2 top-24 aspect-square w-[214px] "
         />
       </div>
-      <p className="font-display text-xl text-muted-foreground">
+      <p className="font-display text-xl text-muted-foreground text-center">
         <span className="text-2xl text-foreground">Automate</span> your forms
         and applications,{" "}
         <span className="text-2xl text-foreground">Right now!</span>

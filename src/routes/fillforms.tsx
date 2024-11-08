@@ -7,12 +7,11 @@ export const Route = createFileRoute("/fillforms")({
 
 function FillForms() {
   return (
-    <div className="w-full p-4 sm:mt-10 sm:w-2/3 sm:p-0 lg:w-1/2">
+    <div>
       <PasteLinkForm />
       <div className="mt-7 flex flex-col gap-5">
         <h1 className="font-display text-4xl">History</h1>
         <div className="flex flex-col gap-2">
-          {/* turn it into a component. */}
           <div className="flex flex-col gap-1 rounded-lg border border-accent bg-muted p-2">
             <div className="flex items-center justify-between">
               <h3 className="text-xs">Principal Engineer</h3>
