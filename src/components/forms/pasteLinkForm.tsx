@@ -57,7 +57,11 @@ export default function PasteLinkForm({ className }: PasteLinkFormProps) {
             )
           }}
         ></FormField>
-        <Button type="submit" variant={"secondary"} className="h-8">
+        <Button
+          type="submit"
+          variant={"secondary"}
+          className="btn btn-secondary h-8"
+        >
           Fill out
         </Button>
       </form>

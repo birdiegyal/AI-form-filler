@@ -54,7 +54,7 @@ export default function UploadFilesForm({ className }: UploadFilesFormProps) {
             )
           }}
         ></FormField>
-        <Button type="submit" variant={"secondary"} className="h-8">
+        <Button type="submit" variant={"secondary"} className="h-8 btn btn-secondary">
           Upload
         </Button>
       </form>

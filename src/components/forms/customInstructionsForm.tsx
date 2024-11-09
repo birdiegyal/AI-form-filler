@@ -58,7 +58,11 @@ export default function CustomInstructionForm({
             )
           }}
         ></FormField>
-        <Button type="submit" variant={"secondary"} className="h-8">
+        <Button
+          type="submit"
+          variant={"secondary"}
+          className="btn btn-secondary h-8"
+        >
           Upload
         </Button>
       </form>

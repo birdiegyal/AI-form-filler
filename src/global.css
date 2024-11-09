@@ -95,6 +95,57 @@
   a.active {
     @apply origin-bottom scale-125 text-primary transition-transform first-of-type:origin-bottom-left last-of-type:origin-bottom-right sm:first-of-type:origin-bottom sm:last-of-type:origin-bottom;
   }
+
+  .btn {
+    transition:
+      box-shadow 200ms linear;
+    box-shadow:
+      0px 12px 12px 0px hsl(var(--accent)),
+      0px 4px 4px 0px hsl(var(--accent)),
+      inset 0px 0px 0px 3px hsla(var(--accent) / 0.2);
+    &:hover {
+      box-shadow:
+        0px 16px 16px 0px hsl(var(--accent)),
+        0px 8px 8px 2px hsl(var(--accent)),
+        inset 0px 0px 0px 2px hsla(var(--accent) / 0.1);
+    }
+  }
+
+  .btn-primary {
+    transition: background-image 400ms linear;
+    background-color: inherit;
+    background-image: linear-gradient(
+      to bottom right,
+      hsl(var(--primary)) 10%,
+      hsla(var(--primary) / 0.8) 90%
+    );
+
+    &:hover {
+      background-image: linear-gradient(
+        to bottom right,
+        hsl(var(--primary)) 10%,
+        hsla(var(--primary) / 0.5) 90%
+      );
+    }
+  }
+
+  .btn-secondary {
+    transition: background-image 400ms linear;
+    background-color: inherit;
+    background-image: linear-gradient(
+      to bottom right,
+      hsl(var(--secondary)) 10%,
+      hsla(var(--secondary) / 0.8) 90%
+    );
+
+    &:hover {
+      background-image: linear-gradient(
+        to bottom right,
+        hsl(var(--secondary)) 10%,
+        hsla(var(--secondary) / 0.5) 90%
+      );
+    }
+  }
 }
 
 ::view-transition-old(root) {
@@ -108,7 +159,7 @@
 @keyframes slide-in {
   from {
     opacity: 0;
-    transform: translateX(90%) scale(0.3) ;
+    transform: translateX(90%) scale(0.3);
     transform-style: preserve-3d;
     perspective: 4000px;
   }
@@ -143,3 +194,7 @@
 ::view-transition-old(navbar) {
   opacity: 0;
 }
+
+/* 
+one of the drawback of tailwindcss is that it doesn't allow list of values for the same property. for e.g. box-shadow: 0px 4px 16px 0px black, 0px 2px 8px 0px black; isnt supported.
+*/
