@@ -60,7 +60,7 @@ export default function PasteLinkForm({ className }: PasteLinkFormProps) {
         <Button
           type="submit"
           variant={"secondary"}
-          className="btn btn-secondary h-8"
+          className="btn btn-secondary h-8 focus-visible:ring-secondary"
         >
           Fill out
         </Button>

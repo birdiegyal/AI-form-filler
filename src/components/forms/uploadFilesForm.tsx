@@ -33,10 +33,7 @@ export default function UploadFilesForm({ className }: UploadFilesFormProps) {
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className={className}
-      >
+      <form onSubmit={form.handleSubmit(onSubmit)} className={className}>
         <FormField
           name="files"
           control={form.control}
@@ -54,7 +51,11 @@ export default function UploadFilesForm({ className }: UploadFilesFormProps) {
             )
           }}
         ></FormField>
-        <Button type="submit" variant={"secondary"} className="h-8 btn btn-secondary">
+        <Button
+          type="submit"
+          variant={"secondary"}
+          className="btn btn-secondary h-8 focus-visible:ring-secondary"
+        >
           Upload
         </Button>
       </form>

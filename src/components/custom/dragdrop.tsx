@@ -40,7 +40,7 @@ export function DragDrop({ children, name, onChange }: DragDropProps) {
 
   return (
     <div
-      className="flex h-full w-full flex-wrap place-items-center justify-center gap-4 overflow-y-auto rounded-lg border border-accent p-4 shadow-lg ring-secondary transition-colors duration-200 active:ring-1 sm:h-full"
+      className="flex h-full w-full flex-wrap place-items-center justify-center gap-4 overflow-y-auto rounded-lg border border-accent p-4 shadow-lg ring-secondary transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:ring-1"
       onDragEnter={makeDroppable}
       onDragOver={makeDroppable}
       onDrop={onDrop}

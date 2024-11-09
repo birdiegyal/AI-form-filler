@@ -61,7 +61,7 @@ export default function CustomInstructionForm({
         <Button
           type="submit"
           variant={"secondary"}
-          className="btn btn-secondary h-8"
+          className="btn btn-secondary h-8 focus-visible:ring-secondary"
         >
           Upload
         </Button>
