@@ -10,7 +10,7 @@ export const Route = createRootRoute({
 
 function RootComponent() {
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
       <div className="grid place-items-center">
         <nav
           className="navbar mt-10 flex w-full flex-wrap items-baseline justify-between gap-7 p-2 px-2 font-display text-xs sm:mt-10 sm:justify-around sm:gap-9 sm:p-2 sm:px-4 sm:text-lg md:gap-11 md:text-2xl"

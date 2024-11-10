@@ -12,8 +12,7 @@ export const Route = createFileRoute("/signup")({
 })
 
 function Signup() {
-  const { theme, setTheme } = useTheme()
-  setTheme("dark")
+  const { theme } = useTheme()
   
   return (
     <div className="flex flex-col place-content-center gap-5">
