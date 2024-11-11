@@ -34,7 +34,7 @@ function Signup() {
         />
       </div>
       <p className="text-center font-display text-xl text-muted-foreground">
-        <span className="text-2xl text-foreground">Automate</span> your forms
+        <span className="text-2xl text-foreground">Auto fill</span> your forms
         and applications,{" "}
         <span className="text-2xl text-foreground">Right now!</span>
       </p>

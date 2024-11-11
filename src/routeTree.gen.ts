@@ -15,6 +15,7 @@ import { Route as UploadfilesImport } from './routes/uploadfiles'
 import { Route as SignupImport } from './routes/signup'
 import { Route as SettingsImport } from './routes/settings'
 import { Route as FillformsImport } from './routes/fillforms'
+import { Route as DevImport } from './routes/dev'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
@@ -43,6 +44,12 @@ const FillformsRoute = FillformsImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const DevRoute = DevImport.update({
+  id: '/dev',
+  path: '/dev',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
@@ -58,6 +65,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/dev': {
+      id: '/dev'
+      path: '/dev'
+      fullPath: '/dev'
+      preLoaderRoute: typeof DevImport
       parentRoute: typeof rootRoute
     }
     '/fillforms': {
@@ -95,6 +109,7 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/dev': typeof DevRoute
   '/fillforms': typeof FillformsRoute
   '/settings': typeof SettingsRoute
   '/signup': typeof SignupRoute
@@ -103,6 +118,7 @@ export interface FileRoutesByFullPath {
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/dev': typeof DevRoute
   '/fillforms': typeof FillformsRoute
   '/settings': typeof SettingsRoute
   '/signup': typeof SignupRoute
@@ -112,6 +128,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/dev': typeof DevRoute
   '/fillforms': typeof FillformsRoute
   '/settings': typeof SettingsRoute
   '/signup': typeof SignupRoute
@@ -120,15 +137,29 @@ export interface FileRoutesById {
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/fillforms' | '/settings' | '/signup' | '/uploadfiles'
+  fullPaths:
+    | '/'
+    | '/dev'
+    | '/fillforms'
+    | '/settings'
+    | '/signup'
+    | '/uploadfiles'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/fillforms' | '/settings' | '/signup' | '/uploadfiles'
-  id: '__root__' | '/' | '/fillforms' | '/settings' | '/signup' | '/uploadfiles'
+  to: '/' | '/dev' | '/fillforms' | '/settings' | '/signup' | '/uploadfiles'
+  id:
+    | '__root__'
+    | '/'
+    | '/dev'
+    | '/fillforms'
+    | '/settings'
+    | '/signup'
+    | '/uploadfiles'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DevRoute: typeof DevRoute
   FillformsRoute: typeof FillformsRoute
   SettingsRoute: typeof SettingsRoute
   SignupRoute: typeof SignupRoute
@@ -137,6 +168,7 @@ export interface RootRouteChildren {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DevRoute: DevRoute,
   FillformsRoute: FillformsRoute,
   SettingsRoute: SettingsRoute,
   SignupRoute: SignupRoute,
@@ -156,6 +188,7 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/dev",
         "/fillforms",
         "/settings",
         "/signup",
@@ -164,6 +197,9 @@ export const routeTree = rootRoute
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/dev": {
+      "filePath": "dev.tsx"
     },
     "/fillforms": {
       "filePath": "fillforms.tsx"

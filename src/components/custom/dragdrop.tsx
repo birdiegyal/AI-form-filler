@@ -5,8 +5,8 @@ import { useFormContext } from "react-hook-form"
 
 interface DragDropProps {
   children?: ReactNode
-  name: string,
-  onChange: (...e: any[]) => void,
+  name: string
+  onChange: (...e: any[]) => void
 }
 
 export function DragDrop({ children, name, onChange }: DragDropProps) {
@@ -40,7 +40,7 @@ export function DragDrop({ children, name, onChange }: DragDropProps) {
 
   return (
     <div
-      className="flex h-full w-full flex-wrap place-items-center justify-center gap-4 overflow-y-auto rounded-lg border border-accent p-4 shadow-lg ring-secondary transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:ring-1"
+      className="flex h-full w-full flex-wrap place-items-center justify-center gap-4 overflow-y-auto rounded-lg border border-accent p-4 shadow-lg ring-secondary transition-all duration-200 hover:shadow-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:ring-1"
       onDragEnter={makeDroppable}
       onDragOver={makeDroppable}
       onDrop={onDrop}
