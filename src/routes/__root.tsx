@@ -3,6 +3,7 @@ import { Link, Outlet, createRootRoute } from "@tanstack/react-router"
 import { TanStackRouterDevtools } from "@tanstack/router-devtools"
 import "@/global.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import ToggleTheme from "@/components/custom/toggleTheme"
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -51,6 +52,7 @@ function RootComponent() {
           <Outlet />
         </div>
       </div>
+      <ToggleTheme></ToggleTheme>
     </ThemeProvider>
   )
 }

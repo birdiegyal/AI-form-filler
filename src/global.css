@@ -44,7 +44,7 @@
     --secondary: #fdfffc;
     --secondary-foreground: #0f172a;
     --muted: #262626;
-    --muted-foreground: #8F8F8F;
+    --muted-foreground: #8f8f8f;
     --accent: #1f1f1f;
     --accent-foreground: 0 0% 98%;
     --destructive: #f21b3f;
@@ -97,8 +97,7 @@
   }
 
   .btn {
-    transition:
-      box-shadow 200ms linear;
+    transition: box-shadow 200ms linear;
     box-shadow:
       0px 12px 12px 0px hsl(var(--accent)),
       0px 4px 4px 0px hsl(var(--accent)),
@@ -191,6 +190,12 @@
   animation: none;
 }
 
+::view-transition-old(popoverTrigger),
+::view-transition-new(popoverTrigger) {
+  animation: none;
+}
+
+
 ::view-transition-old(navbar) {
   opacity: 0;
 }
@@ -198,3 +203,7 @@
 /* 
 one of the drawback of tailwindcss is that it doesn't allow list of values for the same property. for e.g. box-shadow: 0px 4px 16px 0px black, 0px 2px 8px 0px black; isnt supported.
 */
+
+button[aria-haspopup~="dialog"] > svg {
+  stroke: hsl(var(--primary));
+}
