@@ -54,7 +54,7 @@ export default function SignupForm({ className }: SignupFormProps) {
           }}
         ></FormField>
 
-        <Button type="submit" className="h-8 btn transition-opacity focus-visible:ring-primary btn-primary">
+      <Button type="submit" className="h-8 btn transition-opacity focus-visible:ring-primary btn-primary">
           Get magic URL
         </Button>
       </form>
