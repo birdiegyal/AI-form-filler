@@ -214,7 +214,7 @@ button[aria-haspopup~="dialog"] > svg {
   white-space: nowrap;
   border-width: 0;
 }
-
+/* 
 div[data-radix-popper-content-wrapper]{
   filter: url(#goo);
-}
+} */
