@@ -5,7 +5,6 @@ import {
 } from "@/components/ui/popover"
 import {
   Theme,
-  ThemeProviderState,
   useTheme,
   type ThemeProviderState as ThemeProps,
 } from "@/components/theme-provider"
@@ -14,7 +13,6 @@ import { Moon } from "lucide-react"
 import { Sun } from "lucide-react"
 import { ReactNode } from "react"
 import { cn } from "@/lib/utils"
-import { url } from "inspector"
 
 function CurrentThemePreview({
   theme,
@@ -125,7 +123,7 @@ export default function ToggleTheme() {
         </defs>
       </svg>
       <Popover>
-        <PopoverTrigger className="rounded-full border-2 p-2 shadow-md shadow-muted transition-all hover:border-2 hover:border-primary hover:bg-primary/20">
+        <PopoverTrigger className="rounded-full border-2 p-2 shadow-md shadow-muted transition-all hover:border-2 hover:border-primary hover:bg-primary/20 bg-background">
           <CurrentThemePreview theme={currentTheme} key="theme-preview" />
         </PopoverTrigger>
 

@@ -214,6 +214,11 @@ button[aria-haspopup~="dialog"] > svg {
   white-space: nowrap;
   border-width: 0;
 }
+
+div[data-resize-handle]:not([data-resize-handle-state="inactive"]) {
+  @apply bg-secondary/80;
+}
+
 /* 
 div[data-radix-popper-content-wrapper]{
   filter: url(#goo);

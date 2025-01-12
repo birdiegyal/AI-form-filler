@@ -13,19 +13,23 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import React from "react"
 import { cn } from "@/lib/utils"
 
-interface PasteLinkFormProps extends React.HTMLAttributes<HTMLFormElement> {}
+interface PasteLinkFormProps<T extends z.ZodObject<any, any, any, any, any>>
+  extends React.HTMLAttributes<HTMLFormElement> {
+  formLinkSchema: T
+  setFormData: React.Dispatch<z.infer<T>>
+}
 
-const formLinkSchema = z.object({
-  link: z.string().url("enter form URL you would like to fill. "),
-})
-
-export default function PasteLinkForm({ className }: PasteLinkFormProps) {
+export default function PasteLinkForm({
+  className,
+  setFormData,
+  formLinkSchema,
+}: PasteLinkFormProps<z.ZodObject<any, any, any, any, any>>) {
   const form = useForm<z.infer<typeof formLinkSchema>>({
     resolver: zodResolver(formLinkSchema),
   })
 
   function onSubmit(formData: z.infer<typeof formLinkSchema>) {
-    console.log(formData)
+    setFormData(formData)
     form.reset()
   }
 
